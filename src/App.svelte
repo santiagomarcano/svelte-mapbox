@@ -6,6 +6,7 @@
   import datos from "./datos.js";
   import datos2 from "./datos2.js";
   import Popup from "./Popup.svelte";
+  import LayerToggle from "./LayerToggle.svelte";
 
   // console.log(JSON.stringify(datos2) === JSON.stringify(datos));
 
@@ -16,12 +17,10 @@
 <Map lat={38.907} lon={-77.04} zoom={14}>
   <Source {sourceName} {datos} />
   <Layer {sourceName} id={sourceName} />
-  <Popup {sourceName} />
-
+  <!-- <Popup {sourceName} /> -->
   <Source sourceName={sourceName2} datos={datos2} />
-  <Layer sourceName={sourceName2} id={sourceName2} />
-  <Popup sourceName={sourceName2} />
-
+  <!-- <Layer sourceName={sourceName2} id={sourceName2} /> -->
+  <!-- <Popup sourceName={sourceName2} /> -->
   <MapMarker lat={37.8225} lon={-122.0024} label="Svelte Body Shaping" />
   <MapMarker
     lat={33.8981}
@@ -36,4 +35,6 @@
   />
   <MapMarker lat={40.6483} lon={-74.0237} label="Svelte Brands LLC" />
   <MapMarker lat={40.6986} lon={-74.41} label="Svelte Medical Systems" />
+
+  <LayerToggle {sourceName} slot="toggler" />
 </Map>

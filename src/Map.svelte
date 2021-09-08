@@ -41,6 +41,7 @@
     <slot />
   {/if}
 </div>
+<slot name="toggler" />
 
 <style>
   div {
